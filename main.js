@@ -41,21 +41,13 @@ console.log(calcSum(1,2,2,2,2,));
 
 // 4) Напишите функцию декортор, которая будет выводить все данные из строки добавлять в начале и в конец строку: =====
 
-function createPipe(x) {
-  return function() {
+function createPipe() {
+  return function(x) {
     return (`===== ${x} =====`);
   };
 }
-const pipe = createPipe("some text you like");
-console.log(pipe());
-
-// function createPipe(x) { 
-//   function output() { 
-//      return (`===== ${x} =====`); 
-//    }; 
-//    return output(); 
-//  } 
-//  console.log(createPipe("some text you like"));
+const pipeFunction = createPipe();
+console.log(pipeFunction('some text you like'));
 
 /*5) Создайте функцию, которая принемает 2а аругемнта, текст и функцию для его вывода вызовете ее дважды таким образом, 
 чтобы в первый раз вывод строки был в консоль, а второй раз в алерте.*/
