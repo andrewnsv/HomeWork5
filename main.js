@@ -12,16 +12,13 @@ console.log(fillArray(10, "Slavik"));
 
 // 2) Напишите функцию filterArray, которая очищает массив от нежелательных значений (false, undefined, '', 0, null), СПИСОК КОТОРЫХ ПЕРЕДАН ВВИДЕ АРГУМЕНТОВ ФУНКЦИИ.
 
-function filterArray(arr) {
-  return arr.filter((el) => {
-    if (el > 0 || el !== "") {
-      return el;
-    }
-  });
+let array  = [0, 1, 2, null, undefined, 'qwerty', false];
+
+function filterArray() {  
+  return array.filter((negativeEl) => !!negativeEl);
 }
 
-const result = filterArray([0, 1, 2, null, "", undefined, "qwerty", false]);
-
+const result = filterArray(array, false, undefined, '', 0, null); 
 console.log(result);
 
 // 3) Напишите функцию calcSum, которая вернет сумму всех входящих параметров функции.
@@ -43,7 +40,7 @@ console.log(calcSum(1,2,2,2,2,));
 
 function createPipe() {
   return function(x) {
-    return (`===== ${x} =====`);
+    return `===== ${x} =====`;
   };
 }
 const pipeFunction = createPipe();
@@ -53,7 +50,7 @@ console.log(pipeFunction('some text you like'));
 чтобы в первый раз вывод строки был в консоль, а второй раз в алерте.*/
 
 function showText(text, funcShow){
-  return funcShow(text);
+  funcShow(text);
 }
 
 showText('Hello', (message) => console.log(message));
